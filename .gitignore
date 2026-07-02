@@ -41,11 +41,13 @@ desktop.ini
 # IMPORTANTE: a pasta dados_compactos/ NÃO deve ser ignorada — os arquivos
 # .zip precisam estar no repositório (o Passo 1 do desafio é descompactá-los
 # por código).
-#
-# Sobre as SAÍDAS do seu trabalho (dados extraídos, Parquet, gráficos):
-# fica a seu critério versioná-las ou não. Se preferir não subir os
-# arquivos intermediários pesados, descomente as linhas abaixo:
-# dados_extraidos/
-# *.parquet
-# saidas/
 # ==========================================================================
+
+# --- Saídas do pipeline (geradas por src/extract.py e src/transform.py) --
+# CSVs extraídos: nunca versionar (são gerados, pesados, e recriáveis)
+data/interim/*
+!data/interim/.gitkeep
+
+# Parquet final: versionado propositalmente (leve, ajuda quem for avaliar
+# a rodar o app Streamlit sem precisar reprocessar tudo do zero antes)
+!data/processed/.gitkeep
