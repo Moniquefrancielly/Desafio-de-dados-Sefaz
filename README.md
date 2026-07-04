@@ -4,7 +4,7 @@ Análise das despesas por função das 26 capitais brasileiras (2020–2025), a 
 dos dados do FINBRA/Siconfi, com foco em comparar o que foi **empenhado** com o
 que foi **efetivamente pago**, e posicionar Maceió em relação às demais capitais.
 
-## Estrutura do repositório
+## Estrutura
 
 ```
 ├── dados_compactos/        # .zip originais do FINBRA (fornecidos no desafio)
@@ -105,6 +105,33 @@ distintas. Habitação sofre de **imprevisibilidade de execução** (o problema 
 varia bastante, e a execução varia ainda mais). Administração sofre de
 **alocação estruturalmente elevada** (o problema é *quanto* é destinado, de
 forma consistente ano após ano, a um item que não é finalístico).
+
+## App interativo (Streamlit)
+
+Além do notebook, o repositório inclui `app.py` — um dashboard interativo com
+7 abas, cobrindo os mesmos indicadores do notebook de forma explorável (filtro
+de capital e ano, comparação direta entre duas capitais, drill-down por
+subfunção):
+
+```bash
+streamlit run app.py
+```
+
+| Visão Geral | Execução |
+|---|---|
+| ![Visão Geral](assets/01-visao-geral.png) | ![Execução](assets/02-execucao.png) |
+
+| Estrutura do Gasto | Foco em Maceió |
+|---|---|
+| ![Estrutura do Gasto](assets/03-estrutura-gasto.png) | ![Foco em Maceió](assets/04-foco-maceio.png) |
+
+**Abas disponíveis:** Visão Geral (completude por ano), Execução (ranking
+global + comparação por capital + drill-down por subfunção), Per Capita
+(comparação entre capitais, funções selecionáveis), Estrutura do Gasto
+(composição do orçamento, peso de qualquer função entre as 26 capitais,
+restos a pagar), Padrão Geral (execução média × variação entre capitais),
+Evolução Temporal (per capita, execução e peso no orçamento ao longo de
+2020-2024) e Foco em Maceió (resumo executivo com radar de diagnóstico).
 
 ## Limitações e ressalvas
 
