@@ -18,6 +18,8 @@ que foi **efetivamente pago**, e posicionar Maceió em relação às demais capi
 │   └── run_pipeline.py      # Orquestra extract → transform → database
 ├── notebooks/
 │   └── analise_exploratoria.ipynb   # Análise completa, com gráficos e conclusões
+├── assets/                  # Prints do app Streamlit, usados neste README
+├── app.py                   # Dashboard interativo (Streamlit)
 ├── requirements.txt
 └── README.md
 ```
